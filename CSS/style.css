@@ -87,3 +87,5 @@ ul {
   #menu li {
     display:inline;
   }
+
+  *{cursor: url('../images/curseur/curseur.png'), pointer; }
