@@ -102,6 +102,8 @@ ul {
    width: 10%;
    position: absolute;
   top:0;
+  position: fixed;
+  bottom:0;
 height: 100%;
   padding: 0%;
   margin: 0%;
@@ -111,6 +113,8 @@ height: 100%;
 #bandes2{background-color: #7fc3c080;
   width: 10%;
   position: absolute;
+  position: fixed;
+  bottom:0;
   top:0;
   right:0;
   height:100%;
