@@ -1,4 +1,5 @@
-body{background-color: #141414;
+body{
+  background-color: #141414;
 padding: 0%;
 margin: 0%;
 height: 100%;
@@ -95,9 +96,6 @@ ul {
     display:inline;
   }
 
-<<<<<<< HEAD
-  *{cursor: url('../images/curseur/curseur.png'), pointer; }
-=======
   *{cursor:}
   
  #bandes{
@@ -129,4 +127,3 @@ border-left:solid  #cfb845 2px;
 iframe{border:solid  #7fc3c0 2px;}
 
 img{border:solid  #7fc3c0 2px;}
->>>>>>> master

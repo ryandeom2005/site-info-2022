@@ -1,74 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div align="center">
-    <h2>inscription</h2>
-    <form method="POST" action="">
-    </br></br>
+<?php
+    $serveur = "localhost";
+    $dbname = "4tt_ryan";
+    $user = "ryan";
+    $pass = "ryan5";
     
-  
+    $pseudo = $_POST["pseudo"];
+    $mail = $_POST["mail"];
+    $mpd= md5($_POST["mdp"]);
 
-    <table>
-        <tr>
-            <td align="right">
-            <label for="pseudo">Pseudo :</label>
-        </td>
-        <td>
-            <input id="pseudo" type="text" placeholder="Votre pseudo" name="pseudo">
-        </td>
-    </tr>
+    try{
+        //On se connecte à la BDD
+        $dbco = new PDO("mysql:host=$serveur;dbname=$dbname",$user,$pass);
+        $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-
-    <tr>
-        <td align="right">
-        <label for="mail">Adresse mail :</label>
-    </td>
-    <td>
-        <input id="mail" type="text" placeholder="Votre adresse mail" name="mail">
-    </td>
-</tr>
-
-
-
-<tr>
-    <td align="right">
-    <label for="mdp">Mot de passe :</label>
-</td>
-<td>
-    <input id="mdp" type="password" placeholder="Votre mot de passe" name="mdp">
-</td>
-</tr>
-
-<tr>
-    <td align="right">
-    <label for="mdp2">Confirmation du mot de passe :</label>
-</td>
-<td>
-    <input id="mdp2" type="password" placeholder="Confirmer votre mdp" name="mdp2">
-</td>
-</tr>
-
-<tr>
-    <td align="right">
-
-</td>
-
-<td>
-    <br/>
-    <input type="submit" value="Je m'inscris">
-</td>
-</tr>
-
-        </table>
-    </br>
-       
-    </form>
-    </div>
-</body>
-</html>
+        //On insère les données reçues
+        $sth = $dbco -> prepare("INSERT INTO site_info_2022(pseudo, mail, mdp)
+        VALUES ( '$pseudo', '$mail', '$mdp')");
+        $sth->bindParam(':pseudo',$pseudo);
+        $sth->bindParam(':mail',$mail);
+        $sth->bindParam(':mdp',$mdp);
+        $sth->execute();
+        
+        //On renvoie l'utilisateur vers la page de remerciement
+        header('Location: ../HTML/index-langue.html');
+		die;
+    }
+    catch(PDOException $e){
+        echo 'Unable to process the data. Error : '.$e->getMessage();
+    }
+?>
