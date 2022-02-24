@@ -7,3 +7,10 @@ body{
 
   label{
       color: #cfb845}
+
+      #inscription{border:solid #7fc3c0 3px;}
+
+      h2{
+        color: rgb(207, 184, 69)}
+
+*{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
