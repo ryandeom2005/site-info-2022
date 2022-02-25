@@ -6,7 +6,7 @@
     
     $pseudo = $_POST["pseudo"];
     $mail = $_POST["mail"];
-    $mpd= md5($_POST["mdp"]);
+    $mdp= md5($_POST["mdp"]);
 
     try{
         //On se connecte à la BDD

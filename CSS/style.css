@@ -108,7 +108,7 @@ ul {
 height: 100%;
   padding: 0%;
   margin: 0%;
-  border-right:solid  #cfb845 2px;
+  border-right:solid  rgb(207, 184, 69) 2px;
 }
 
 #bandes2{background-color: #7fc3c080;
@@ -127,3 +127,13 @@ border-left:solid  #cfb845 2px;
 iframe{border:solid  #7fc3c0 2px;}
 
 .img{border:solid  #7fc3c0 2px;}
+
+#log{
+top:20px;
+padding-top:15px;
+}
+
+
+#connecté{
+  top:10px;
+  padding:20px;}
